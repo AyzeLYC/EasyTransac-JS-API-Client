@@ -1,0 +1,1 @@
+The whole purpose of this Github repository is to permit peoples to use the EasyTransac.com api using pre built modules rather than having to code it themself / pay a developper to create a module for them
