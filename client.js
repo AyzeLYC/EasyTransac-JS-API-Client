@@ -127,11 +127,7 @@ function callEasyTransacApi(TD, PM, APIK) { // TD = Transaction Datas | PM = Pay
         
         for (var i; i < TD.length(); i++) {
             
-            if (keys[i] === ) {
-                
-                
-                
-            };
+            
             
         };
         
