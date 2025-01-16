@@ -10,7 +10,6 @@ function createNewTransaction(TD, PM, APIK) { // TD = Transaction Datas | PM = P
         
         hostname: "easytransac.com",
         port: 443,
-        path: "/api/payment/",
         method: "POST",
         headers: {
             
@@ -20,6 +19,79 @@ function createNewTransaction(TD, PM, APIK) { // TD = Transaction Datas | PM = P
             "EASYTRANSAC-API-KEY": "REPLACE THIS TEXT WITH YOUR API KEY"
             
         }
+        
+    };
+
+    if (PM === "direct") { // PCI DSS compliance required
+
+        ETAPICC.path = "/api/payment/direct";
+        
+    };
+    if (PM === "oneclick") {
+
+        ETAPICC.path = "/api/payment/oneclick";
+        
+    };
+    if (PM === "sepa") { // 
+
+        ETAPICC.path = "/api/payment/sdd/init";
+        
+    };
+    if (PM === "bybank") {
+
+        ETAPICC.path = "/api/payment/bybank";
+        
+    };
+    
+    if (PM === "page") { // permit you to not have to be PCI DSS compliant and open a new payment page on Easy Transac website rather of having to handle the payment datas yourself
+        
+        ETAPICC.path = "/api/payment/page";
+        
+    };
+    if (PM === "cancelpage") {
+        
+        ETAPICC.path = "/api/payment/cancelpage";
+        
+    };
+    if (PM === "resendpage") {
+
+        ETAPICC.path = "/api/payment/resendpage";
+        
+    };
+
+    if (PM === "transfer") {
+        
+        ETAPICC.path = "/api/payment/transfer";
+        
+    };
+
+    if (PM === "updatesubscription") {
+
+        ETAPICC.path = "/api/payment/rebill/update";
+        
+    };
+
+    if (PM === "status") {
+
+        ETAPICC.path = "/api/payment/status";
+        
+    };
+
+    if (PM === "refund") {
+
+        ETAPICC.path = "/api/payment/refund",
+        
+    };
+
+    if (PM === "capture") {
+
+        ETAPICC.path = "/api/payment/capture";
+        
+    };
+
+    if (PM === "cancel") {
+
+        ETAPICC.path = "/api/payment/cancel";
         
     };
     
